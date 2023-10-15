@@ -1,7 +1,10 @@
 package com.api.produtos.controle;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,5 +26,10 @@ public class ProdutoControle {
     @GetMapping
     public String rota() {
         return "Funcionou";
+    }
+
+    @PostMapping("/cadastrar")
+    public ResponseEntity<?> cadastrar(@RequestBody Produto produto) {
+        return servico.cadastrar(produto);
     }
 }
