@@ -30,6 +30,6 @@ public class ProdutoControle {
 
     @PostMapping("/cadastrar")
     public ResponseEntity<?> cadastrar(@RequestBody Produto produto) {
-        return servico.cadastrar(produto);
+        return servico.cadastrarAlterar(produto, "cadastrar");
     }
 }
